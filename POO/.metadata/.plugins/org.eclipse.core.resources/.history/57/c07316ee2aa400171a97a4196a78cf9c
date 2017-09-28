@@ -1,0 +1,7 @@
+package TP2;
+
+public class Forme {
+
+	
+	public abstract void dessiner(PileTransformations pt);
+}

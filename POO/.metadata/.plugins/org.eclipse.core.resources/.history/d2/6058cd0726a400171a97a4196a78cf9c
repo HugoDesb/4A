@@ -1,0 +1,5 @@
+package TP2;
+
+public class Segment {
+	private Point p1,p2;
+}

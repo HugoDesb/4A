@@ -1,0 +1,28 @@
+package TP2;
+
+public class Image extends Forme {
+	
+	private Point origin;
+
+	public Image() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Image(Point p) {
+		// TODO Auto-generated constructor stub
+		origin = p;
+	}
+
+	@Override
+	public void dessiner(PileTransformations pt) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void deplacer(Point p) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

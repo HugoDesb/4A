@@ -1,0 +1,21 @@
+package TP2;
+
+public class Segment {
+	private Point p1,p2;
+
+	public Segment(Point p1, Point p2) {
+		this.p1 = p1;
+		this.p2 = p2;
+	}
+	
+	public void dessiner(PileTransformations pt){
+		System.out.println("Segment de p1: "+p1.add(pt.getCurrentTransformation())+
+				" à p2: "+p1.add(pt.getCurrentTransformation()));
+	}
+	
+	public void deplacer(Point p){
+		
+	}
+	
+	
+}

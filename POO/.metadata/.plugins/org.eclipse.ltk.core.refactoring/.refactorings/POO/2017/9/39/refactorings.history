@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;ima&apos; in &apos;TP2.Main.main(...)&apos; to &apos;ima1&apos;&#x0A;- Original project: &apos;POO&apos;&#x0A;- Original element: &apos;TP2.Main.main(String[]).ima&apos;&#x0A;- Renamed element: &apos;ima&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;ima&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;TP2{Main.java[Main~main~\[QString;@ima!865!889!871!873!QImage;!0!false" name="ima1" references="true" stamp="1506590747383" version="1.0"/>
+</session>
