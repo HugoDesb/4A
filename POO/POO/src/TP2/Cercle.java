@@ -1,26 +1,29 @@
 package TP2;
 
 public class Cercle extends Forme{
-	private Point centre;
-	private Segment rayon;
+	private int rayon;
 	
 	
-	public Cercle(Point centre, Segment rayon) {
-		super();
-		this.centre = centre;
+	public Cercle(Point centre, int rayon) {
+		super(centre);
 		this.rayon = rayon;
 	}
 	
 	public void dessiner(PileTransformations pt){
-		System.out.println("Cercle de centre "+centre.add(pt.getCurrentTransformation()));
-		System.out.println("et de rayon : \t");
-		rayon.dessiner(pt);
+		System.out.println("Cercle de centre "+getOriginPoint().add(pt.getCurrentTransformation()));
+		System.out.println("et de rayon : "+rayon+"");
 	}
 	
+	@Override
 	public void deplacer(Point p){
-		centre.add(p);
-		rayon.deplacer(p);
+		super.deplacer(p);
 	}
+
+	@Override
+	public String toString() {
+		return "Cercle [centre=" + getOriginPoint() + ", rayon=" + rayon + "]";
+	}
+	
 	
 	
 }

@@ -101,3 +101,39 @@ Java Model Exception: Java Model Status [<project root> [in POO] is not on its p
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1492)
 !SUBENTRY 1 org.eclipse.jdt.core 4 1006 2017-09-28 10:10:29.762
 !MESSAGE <project root> [in POO] is not on its project's build path
+
+!ENTRY org.eclipse.core.resources 4 568 2017-10-06 16:00:21.551
+!MESSAGE Could not write workspace metadata '/amuhome/d16023863/Documents/4A/POO/.metadata/.plugins/org.eclipse.core.resources/1.snap'.
+!STACK 0
+java.io.IOException: Débordement du quota d'espace disque
+	at java.io.FileOutputStream.close0(Native Method)
+	at java.io.FileOutputStream.access$000(FileOutputStream.java:53)
+	at java.io.FileOutputStream$1.close(FileOutputStream.java:356)
+	at java.io.FileDescriptor.closeAll(FileDescriptor.java:212)
+	at java.io.FileOutputStream.close(FileOutputStream.java:354)
+	at java.io.FilterOutputStream.close(FilterOutputStream.java:159)
+	at java.io.FilterOutputStream.close(FilterOutputStream.java:159)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.succeed(SafeChunkyOutputStream.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.snapTree(SaveManager.java:1511)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1220)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1165)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.core.resources 4 568 2017-10-06 16:05:28.234
+!MESSAGE Could not write workspace metadata '/amuhome/d16023863/Documents/4A/POO/.metadata/.plugins/org.eclipse.core.resources/1.snap'.
+!STACK 0
+java.io.IOException: Débordement du quota d'espace disque
+	at java.io.FileOutputStream.close0(Native Method)
+	at java.io.FileOutputStream.access$000(FileOutputStream.java:53)
+	at java.io.FileOutputStream$1.close(FileOutputStream.java:356)
+	at java.io.FileDescriptor.closeAll(FileDescriptor.java:212)
+	at java.io.FileOutputStream.close(FileOutputStream.java:354)
+	at java.io.FilterOutputStream.close(FilterOutputStream.java:159)
+	at java.io.FilterOutputStream.close(FilterOutputStream.java:159)
+	at org.eclipse.core.internal.localstore.SafeChunkyOutputStream.succeed(SafeChunkyOutputStream.java:68)
+	at org.eclipse.core.internal.resources.SaveManager.snapTree(SaveManager.java:1511)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1220)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1165)
+	at org.eclipse.core.internal.resources.DelayedSnapshotJob.run(DelayedSnapshotJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
