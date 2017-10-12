@@ -42,17 +42,18 @@ public class Entiers extends Structure {
 	/**
 	 * Delete the integer if found
 	 * @param el
+	 * @throws NotElementEntiers 
 	 */
-	public void supprimer(int el) {
+	public void supprimer(int el) throws NotElementEntiers {
 		int position = containsAndWhere(el);
-		if(position!=-1) {
+		if(position == -1){
+			throw new NotElementEntiers(el);
+		}else{
 			for(int i=position; i<count-1; i++) {
 				set[i] = set[i+1];
 			}
 			count--;
 			System.out.println("Element " + el + " supprim�.");
-		}else {
-			System.out.println("Element "+el+" non-pr�sent, donc pas de suppression");
 		}
 	}
 	
@@ -92,6 +93,20 @@ public class Entiers extends Structure {
 		if(count < 0){
 			count=0;
 		}	
+	}
+	
+	/**
+	 * Returns the nb at the specified index
+	 * @param i
+	 * @return an int
+	 * @throws HorsLimite
+	 */
+	public int get(int i) throws HorsLimite{
+		if(i<0 || i>=count){
+			throw new HorsLimite(i);
+		}else{
+			return set[i];
+		}
 	}
 	
 	

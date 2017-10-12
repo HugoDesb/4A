@@ -56,9 +56,13 @@ public class Liste extends Structure implements Cloneable{
 	/**
 	 * Remove the given number of the list if present.
 	 * @param nb
+	 * @throws NotElementListe 
 	 */
-	public void supprimer(int nb) {
+	public void supprimer(int nb) throws NotElementListe {
 		int position = containsAndWhere(nb);
+		if(position == -1){
+			throw new NotElementListe();
+		}
 		if(position != -1) {
 			for(int i = position; i<count-1;i++) {
 				list[i] = list[i+1];

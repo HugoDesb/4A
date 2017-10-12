@@ -1,34 +1,34 @@
 package TP1;
 
+import java.util.ArrayDeque;
+import java.util.Iterator;
+
 
 /**
  * @author Hugo Desbiolles
  * Exercice 1
  */
 
-public class Pile {
-	private int [] stack;
-	private int count;
-	private int size;
+public class Pile<E> {
+	private ArrayDeque<E> stack;
+	private int maxSize;
 
 	/**
 	 * Constructor
 	 * @param size
 	 */
-	public Pile(int size) {
-		this.count = 0;
-		this.size = size;
-		this.stack = new int[size];
+	public Pile(int maxSize) {
+		this.maxSize = maxSize;
+		this.stack = new ArrayDeque<>(maxSize);
 	}
 	
 	/**
 	 * Add if possible the int
 	 * @param el
 	 */
-	public void empiler(int el) {
+	public void empiler(E el) {
 		if(!pleine()) {
-			stack[count] = el;
-			count++;
+			stack.push(el);
 		}
 	}
 	
@@ -36,13 +36,14 @@ public class Pile {
 	 * Remove the top of the stack if not already empty, then return the removed integer.
 	 * If the stack was empty, then return 0;
 	 * @return the removed integer (or 0)
+	 * @throws PileVide 
 	 */
-	public int depiler() {
+	public E depiler() throws PileVide {
 		if(!vide()) {
-			count--;
-			return stack[count];
+			System.out.println(toString());
+			return stack.pop();
 		}else {
-			return 0;
+			throw new PileVide();
 		}
 	}
 	
@@ -51,7 +52,7 @@ public class Pile {
 	 * @return T/F
 	 */
 	public boolean pleine() {
-		return count==size;
+		return stack.size() == maxSize;
 	}
 	
 	/**
@@ -59,14 +60,15 @@ public class Pile {
 	 * @return T/F
 	 */
 	public boolean vide() {
-		return count==0;
+		return stack.isEmpty();
 	}
 
 	@Override
 	public String toString() {
-		String ret = "Pile : (count=" + count + ", size=" + size + ")\n";
-		for(int i = count-1; i>= 0; i--) {
-			ret = ret + "\t"+stack[i]+"\n";
+		String ret = "Pile : (count=" + stack.size() + ", size=" + maxSize + ")\n";
+		Iterator<E> a = stack.iterator();
+		while(a.hasNext()){
+			ret = ret + "\t"+a.next()+"\n";
 		}
 		return ret;
 	}
