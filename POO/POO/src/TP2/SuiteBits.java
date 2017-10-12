@@ -61,10 +61,11 @@ public class SuiteBits extends Structure {
 		if(nb<=maxInteger){
 			int index = nb/BITSLONG;
 			System.out.println(index);
-			int bitNb = BITSLONG - (nb%BITSLONG)-1;
+			long bitNb = BITSLONG - (nb%BITSLONG)-1;
 			System.out.println(bitNb);
-			long mask = 1 << bitNb;// 0 partout sauf au bit bitNb
-			System.out.println(mask);
+			long mask = 0;
+			mask = 2^bitNb | mask;// 0 partout sauf au bit bitNb
+			System.out.println(Long.toBinaryString(mask));
 			tab[index] = tab[index] | mask;
 		}
 	}
