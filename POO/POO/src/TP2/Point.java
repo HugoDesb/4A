@@ -1,5 +1,7 @@
 package TP2;
 
+import TP3.HashPoint;
+
 /**
  * @author d16023863
  *	Classe représentant un Point
@@ -54,6 +56,24 @@ public class Point {
 	@Override
 	public String toString() {
 		return "(" + x + ", " + y + ")";
+	}
+	
+	@Override
+	public boolean equals(Object arg0) {
+		// TODO Auto-generated method stub
+		if(arg0.getClass()==this.getClass()) {
+			Point a = (Point)arg0;
+			if((a.getX()==this.getX()) && (a.getY()==this.getY())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return getX()+getY();
 	}
 
 	

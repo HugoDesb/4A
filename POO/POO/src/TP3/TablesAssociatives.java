@@ -14,7 +14,7 @@ public class TablesAssociatives {
 		
 		
 		//Lecture du fichier
-		File f = new File("/amuhome/d16023863/Documents/4A/POO/sampletp3.txt");
+		File f = new File("res/sampletp3.txt");
 		try{
 			Scanner sc = new Scanner(f);
 			while(sc.hasNext()){
@@ -29,11 +29,12 @@ public class TablesAssociatives {
 	}
 	
 	public static void scanLine(TreeMap<String, Integer> map, String line){
-		line.replaceAll("\\p{P}", ""); //removes punctuation
+		line = line.replaceAll("\\p{P}", ""); //removes punctuation
+		line = line.toLowerCase();
 		String [] words = line.split(" ");
 		for(String ss : words){
 			if(map.containsKey(ss)){
-				map.put(ss, map.get(ss));
+				map.put(ss, map.get(ss)+1);
 			}else{
 				map.put(ss, 1);
 			}
