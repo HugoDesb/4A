@@ -1,7 +1,5 @@
 package TP2;
 
-import TP3.HashPoint;
-
 /**
  * @author d16023863
  *	Classe représentant un Point

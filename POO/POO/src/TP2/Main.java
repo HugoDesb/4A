@@ -6,6 +6,8 @@ import java.util.Collections;
 
 import TP1.Entiers;
 import TP1.Liste;
+import TP1.NotElementEntiers;
+import TP1.NotElementListe;
 
 public class Main {
 
@@ -122,7 +124,15 @@ public class Main {
 		System.out.println("["+s[0].toString()+" , "+s[1].toString()+"]");
 		for(int i = 0; i<10;i++){
 			if(i%2==1){
-				s[i%2].supprimer(i);
+				try {
+					s[i%2].supprimer(i);
+				} catch (NotElementEntiers e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (NotElementListe e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 		System.out.println("RE : Structure de taille "+2);
