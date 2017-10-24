@@ -19,7 +19,7 @@ public class HashPoint {
 		System.out.println("}");
 		
 		
-		MonHashSet<Point> hep = hop.sousEnsembleAléatoire(4);
+		MonHashSet<Point> hep = hop.sousEnsembleAleatoire(4);
 		
 		System.out.println("modified : {");
 		for(Point p : hep){

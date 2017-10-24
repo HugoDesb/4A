@@ -76,10 +76,14 @@ public class Entiers extends Structure {
 	public String toString() {
 		String ret = "Entiers ( size=" + size + ", count=" + count + ")\n\t(";
 		int i;
-		for(i = 0; i<count-1;i++) {
-			ret += set[i]+", ";
+		if(count>0) {
+			for(i = 0; i<count-1;i++) {
+				ret += set[i]+", ";
+			}
+			ret += set[i]+")";
+		}else {
+			ret += ")";
 		}
-		ret += set[i]+")";
 		return ret;
 	}
 	

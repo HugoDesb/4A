@@ -27,7 +27,7 @@ public class MonHashSet<E> extends HashSet<E> {
 		// TODO Auto-generated constructor stub
 	}
 
-	public MonHashSet<E> sousEnsembleAléatoire(int n){
+	public MonHashSet<E> sousEnsembleAleatoire(int n){
 		MonHashSet<E> mhs = new MonHashSet<>(this);
 		int cardinality = mhs.size();
 		Iterator<E> it = mhs.iterator();
