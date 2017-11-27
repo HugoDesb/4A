@@ -1,5 +1,8 @@
 package TP1;
 
+import TP1.Liste.ListeIterator;
+import TP6.MonIterator;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -57,6 +60,12 @@ public class Main {
 			b.inserer(3);
 			System.out.println("La liste : \n"+b.toString());
 			
+			MonIterator iter 	= b.createIterator();
+			while(!iter.fin()){
+				System.out.println("--------------------"+iter.courant());
+				iter.suivant();
+			}
+			
 			b.supprimer(4);
 			System.out.println("La liste apres suppression de 4: \n" + b.toString());
 			
@@ -69,6 +78,8 @@ public class Main {
 			
 			b.inserer(4);
 			System.out.println("La liste apres insertion de 4 : \n"+b.toString());
+			
+			
 			
 			b.get(5);
 			b.supprimer(1);
@@ -102,7 +113,7 @@ public class Main {
 			System.out.println("Suppression de 4 :");
 			System.out.println(c.toString());
 			
-			c.supprimer(6);
+			//c.supprimer(6);
 			System.out.println("Suppression de 6 :");
 			System.out.println(c.toString());
 			
@@ -113,6 +124,13 @@ public class Main {
 			c.inserer(15);
 			System.out.println("Insertion de 7, 4, 37, 18 et 15 :");
 			System.out.println(c.toString());
+			
+			MonIterator iter 	= c.createIterator();
+			
+			while(!iter.fin()){
+				System.out.println("--------------------"+iter.courant());
+				iter.suivant();
+			}
 			
 			c.inserer(19);
 			System.out.println("Insertion de 19 : (normalement pas de changement)");

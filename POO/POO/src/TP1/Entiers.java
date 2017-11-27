@@ -1,14 +1,22 @@
+
 package TP1;
 
+import java.util.Iterator;
+
 import TP2.Structure;
+import TP6.BidirInterator;
+import TP6.MonIterable;
+import TP6.MonIterator;
+import TP6.SupIterator;
 
 /**
  * Exercice 2
  * @author Hugo Desbiolles
+ * @param <T>
  */
-public class Entiers extends Structure {
+public class Entiers<T> extends Structure implements MonIterable{
 	private int[] set;
-	private int size;
+	private int maxSize;
 	private int count;
 	
 	/**
@@ -16,7 +24,7 @@ public class Entiers extends Structure {
 	 * @param size
 	 */
 	public Entiers(int size) {
-		this.size = size;
+		this.maxSize = size;
 		set = new int[size];
 		count = 0;
 	}
@@ -26,7 +34,7 @@ public class Entiers extends Structure {
 	 * @param el
 	 */
 	public void inserer(int el) {
-		if((containsAndWhere(el) == -1) && (count<size) ) {
+		if((containsAndWhere(el) == -1) && (count<maxSize) ) {
 			int i = 0;
 			while (el > set[i] && i<count) {
 				i++;
@@ -74,7 +82,7 @@ public class Entiers extends Structure {
 
 	@Override
 	public String toString() {
-		String ret = "Entiers ( size=" + size + ", count=" + count + ")\n\t(";
+		String ret = "Entiers ( size=" + maxSize + ", count=" + count + ")\n\t(";
 		int i;
 		for(i = 0; i<count-1;i++) {
 			ret += set[i]+", ";
@@ -110,5 +118,56 @@ public class Entiers extends Structure {
 	}
 	
 	
+	
+	
+
+
+	public MonIterator createIterator() {
+		// TODO Auto-generated method stub
+		return new EntIterator();
+	}
+	
+	public class EntIterator implements BidirInterator, SupIterator{
+		private int courant;
+		
+		public EntIterator() {
+			// TODO Auto-generated constructor stub
+			courant = 0;
+		}
+		
+		@Override
+		public int courant() {
+			// TODO Auto-generated method stub
+			return set[courant];
+		}
+
+		@Override
+		public void suivant() {
+			// TODO Auto-generated method stub
+			courant++;
+		}
+
+		@Override
+		public boolean fin() {
+			// TODO Auto-generated method stub
+			return courant == count;
+		}
+		@Override
+		public void supprime() {
+			if(count>=1){
+				for(int i = courant; i<count;i++){
+					set[courant] = set[courant+1];
+				}
+				count--;
+			}
+		}
+
+		@Override
+		public void precedent() {
+			courant--;
+		}
+
+		
+	}
 	
 }
