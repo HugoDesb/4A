@@ -1,12 +1,17 @@
 package TP1;
 
+import TP1.Entiers.EntIterator;
 import TP2.Structure;
+import TP6.InitIterator;
+import TP6.InsIterator;
+import TP6.MonIterable;
+import TP6.MonIterator;
 
 /**
  * @author Hugo Desbiolles
  * Exercice 3
  */
-public class Liste extends Structure implements Cloneable{
+public class Liste extends Structure implements Cloneable, MonIterable{
 	private Element[] list;
 	private int count;
 	private int maxSize;
@@ -99,7 +104,62 @@ public class Liste extends Structure implements Cloneable{
 		for(int i = count-1;i>=0;i--){
 			l.inserer(list[i].getNumber());
 		}
+		
 		return l;
+	}
+
+	@Override
+	public MonIterator createIterator() {
+		// TODO Auto-generated method stub
+		
+		return new ListeIterator();
+	}
+	
+	public class ListeIterator implements InitIterator, InsIterator{
+		private int courant;
+		
+		public ListeIterator() {
+			courant = 0;
+		}
+
+		Element crt;
+		
+		@Override
+		public int courant() {
+			// TODO Auto-generated method stub
+			return list[courant].getNumber();
+		}
+
+		@Override
+		public void suivant() {
+			// TODO Auto-generated method stub
+			courant++;
+		}
+
+		@Override
+		public boolean fin() {
+			// TODO Auto-generated method stub
+			return courant == count;
+		}
+
+		@Override
+		public void inserer(int i) {
+			// TODO Auto-generated method stub
+			if(count<maxSize) {
+				Element ins = new Element(i);
+				for(int k = count; k>courant; k--){
+					list[k] = list[k--];
+				}
+				list[courant] = ins;
+				count++;
+			}
+		}
+
+		@Override
+		public void init() {
+			// TODO Auto-generated method stub
+			courant = 0;
+		}
 	}
 }
 

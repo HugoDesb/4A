@@ -1,10 +1,12 @@
 package TP2;
 
+import java.util.Observable;
+
 /**
  * @author d16023863
  *	Classe représentant un Point
  */
-public class Point {
+public class Point extends Observable{
 	
 	private int x,y;
 	
